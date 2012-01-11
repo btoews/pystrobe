@@ -1,4 +1,5 @@
-# file: pystrobe.py
+# file : pystrobe.py
+# usage: python ./pystrobe.py <frequency> 
 # (c) mastahyeti 2012
 # MIT license
 # YAY CURSES... just kidding
@@ -82,13 +83,8 @@ def strobe(screen,frequency,cp_1,cp_2):
 
 def main(screen):
 	try:
-		#frequency better be there, or else YOU are in big trouble mister!
-		try:
-			frequency = float(argv[-1])
-		except:
-			print "usage: python ./pystrobe.py <frequency>"
-			die_nice(screen)
-
+		#get the frequency.
+		frequency = float(argv[-1])
 		#setup some color pairs
 		curses.init_pair(1,curses.COLOR_WHITE,curses.COLOR_BLACK)
 		curses.init_pair(2,curses.COLOR_BLACK,curses.COLOR_WHITE)
@@ -96,16 +92,20 @@ def main(screen):
 		#FREAK OUT!
 		for i in strobe(screen,frequency,1,2):
 			pass
+	except ValueError:
+		message = "usage: python ./pystrobe.py <frequency>"
+                die_nice(screen,message)
 	except KeyboardInterrupt:
 		die_nice(screen)
 
-def die_nice(stdscr):
+def die_nice(stdscr,message=""):
 	curses.curs_set(1)
 	stdscr.keypad(0)
 	stdscr.nodelay(0)
 	curses.nocbreak()
 	curses.echo()
 	curses.endwin()
+	print message
 
 if __name__=="__main__":
 	try:
