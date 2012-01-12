@@ -1,7 +1,7 @@
 #pystrobe.py -- a python strobelight!!!#
 
 Written with curses to act as a [dream-machine](http://lmgtfy.com)... 
-Also uses pyaudio to generate binaural beats at the same frequency.
+Also uses pyaudio to generate [binaural beats](http://en.wikipedia.org/wiki/Binaural_beats) at the same frequency.
 It takes the audio a few secods to catch up after starting the video
 or changing frequency.
 
