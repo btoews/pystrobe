@@ -1,4 +1,4 @@
-#pystrobe.py -- a python strobelight!!!#
+#pystrobe.py -- a python deam macihne and binaural beat generator
 
 Written with curses to act as a [dream-machine](http://lmgtfy.com)... 
 Also uses pyaudio to generate [binaural beats](http://en.wikipedia.org/wiki/Binaural_beats) at the same frequency.
